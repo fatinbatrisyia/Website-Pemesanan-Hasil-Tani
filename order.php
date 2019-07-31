@@ -27,7 +27,7 @@
 				$difference = $val_digunakan->diff($val_pesan);
 				//echo $difference->days;
 				$kt = mysql_fetch_object(mysql_query("SELECT *FROM kota where id='$kota'"));
-				if($difference->days >= 3){
+				if($difference->days = 1){
 					
 					$q = mysql_query("insert into pesanan Values(NULL,'$tanggal_pesan','$tanggal_digunakan','$_SESSION[iam_user]','$nama','$alamat','$kt->nama','$kt->ongkir','$telephone','0','belum lunas')");
 					if($q){
@@ -54,10 +54,6 @@
 						redir("success.php");
 					}
 
-				}else{
-					?>
-					<div class="alert alert-danger">Tanggal Penggunakan terlalu mepet. Pemesanan paling sedikit 3 Hari sebelum hari H.</div>
-					<?php
 				}
 			}
 		?>
